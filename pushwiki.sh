@@ -19,7 +19,7 @@ gpg --no-tty --quiet --no-use-agent --output ${tmpfolder}/dokuwiki.tar.gz.gpg.si
 printf "Pushing to owncloud\n"
 mv ${tmpfolder}/dokuwiki.tar.gz.gpg.sig ${tmpfolder}/${backupname}
 cp ${tmpfolder}/${backupname} ~/ownCloud/
-owncloudcmd ~/ownCloud ${pw3} > /dev/null 
+owncloudcmd ~/ownCloud https://${pw3}/remote.php/webdav/  > /dev/null 
 printf "Cleaning up"
 rm -rf ${tmpfolder}
 printf "\nIn order to verify: gpg --verify [file]\nIn order to decrypt: gpg --output [resulting file] --decrypt [file]\n"
