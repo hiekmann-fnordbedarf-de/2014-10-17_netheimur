@@ -1,7 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-""" Use in i3wm with:
+""" 
+Taken from the interwobs and adapted!
+Original: https://faq.i3wm.org/question/202/what-do-you-guys-use-for-printscreen/
+
+Use in i3wm with:
 Save as screeshot.py somewhere into your PATH
 bindsym --release Print exec --no-startup-id screenshot.py
 """
