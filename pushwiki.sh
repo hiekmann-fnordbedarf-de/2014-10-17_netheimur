@@ -18,7 +18,7 @@ printf "Signing encrypted DokuWiki\n"
 gpg --no-tty --quiet --no-use-agent --output ${tmpfolder}/dokuwiki.tar.gz.gpg.sig --passphrase ${pw2} --local-user 0x57E5F195 --sign ${tmpfolder}/dokuwiki.tar.gz.gpg &> /dev/null
 printf "Pushing to owncloud\n"
 mv ${tmpfolder}/dokuwiki.tar.gz.gpg.sig ${tmpfolder}/${backupname}
-cp ${tmpfolder}/${backupname} ~/ownCloud/
+cp ${tmpfolder}/${backupname} ~/ownCloud/dokuwiki/
 owncloudcmd ~/ownCloud https://${pw3}/remote.php/webdav/  > /dev/null 
 printf "Cleaning up"
 rm -rf ${tmpfolder}
