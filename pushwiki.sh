@@ -21,5 +21,5 @@ mv ${tmpfolder}/dokuwiki.tar.gz.gpg.sig ${tmpfolder}/${backupname}
 cp ${tmpfolder}/${backupname} ~/ownCloud/dokuwiki/
 owncloudcmd ~/ownCloud https://${pw3}/remote.php/webdav/  > /dev/null 
 printf "Cleaning up"
-rm -rf ${tmpfolder}
+trap "{ rm -rf ${tmpfolder} ; exit 255; }" EXIT
 printf "\nIn order to verify: gpg --verify [file]\nIn order to decrypt: gpg --output [resulting file] --decrypt [file]\n"
